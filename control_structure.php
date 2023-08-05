@@ -1,5 +1,6 @@
 <?php
-/*
+
+// code
 $x = 10;
 if($x != 20)
 {
@@ -9,9 +10,10 @@ else
 {
     echo "No";
 }
-*/
 
-/*
+
+
+// code
 $number = 70;
 
 if($number > 70)
@@ -22,8 +24,10 @@ else
 {
     echo "Other";
 }
-*/
 
+
+
+// code
 
 $num = 45;
 
@@ -39,5 +43,6 @@ else
 {
     echo "Third";
 }
+
 
 ?>
