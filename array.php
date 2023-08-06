@@ -75,4 +75,18 @@ $arr = array("name"=>"Vishal", "city"=>"Delhi");
 echo $arr['name'];
 
 
+
+/////////////////// Multidimension Array ///////////////////////
+
+//
+$arr = array("Student1Data"=> array("Name"=>"Allen","City"=>"Mumbai","Subject"=>array("Eng","Maths"),"age"=>10));
+echo '<pre>';
+print_r($arr);
+
+
+// We want to check the index positions of subjects in "Student1 array"
+$arr = array("Student1"=> array("Name"=>"Allen","City"=>"Mumbai","Subject"=>array("Eng","Maths"),"age"=>10));
+echo '<pre>';
+print_r($arr['Student1']['Subject']); // It will display index positions of subjects in "Student1" array"
+
 ?>
