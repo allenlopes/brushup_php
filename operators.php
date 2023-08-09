@@ -22,11 +22,7 @@ echo "<br>";
 echo ++$x;
 
 
-// Logical Operators ->
-
-$fname = "Allen";
-$lname = "Lopes";
-echo $fname.' '.$lname;
+// Logical Operators -> &&, ||, !
 
 
 
