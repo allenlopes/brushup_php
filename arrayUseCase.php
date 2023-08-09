@@ -1,13 +1,16 @@
 <?php
 
+//
 $arrCity = array("Delhi", "Agra", "Pune", "Mumbai");
 sort($arrCity);
 
+
+
 // Printing the values in the array using For Loop:
 $arrCity1 = array("Delhi", "Agra", "Pune", "Mumbai");
-for($i=0; $i < count($arrCity); $i++)
+for($i=0; $i < count($arrCity1); $i++)
 {
-    echo $arrCity[$i];
+    echo $arrCity1[$i];
     echo "<br>";
 }
 
@@ -25,6 +28,7 @@ for($i=0; $i < count($arrCity); $i++)
 
 <br />
 <br />
+
 
 # After - Sorting using Array Functions:
 <br />
