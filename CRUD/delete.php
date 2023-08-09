@@ -1,8 +1,17 @@
 <?php
 
-$con = mysqli_connect("localhost:3308", "root", "", "phptut");
+include('db.php');
+if(!isset($_SESSION['IS_LOGIN'])){
+    header('location:login.php');
+    die();
+}
 
-$id=$_GET['id'];
+$id= mysqli_real_escape_string($con,$_GET['id']);
+if($id == ''){
+    header('location:index.php');
+    die();
+}
+
 mysqli_query($con,"DELETE from student where id='$id'");
 
 header('location:index.php');

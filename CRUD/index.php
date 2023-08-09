@@ -1,10 +1,18 @@
 <?php
 
-$con = mysqli_connect("localhost:3308", "root", "", "phptut");
+include('db.php'); // or else require('db.php')
+if(!isset($_SESSION['IS_LOGIN'])){
+    header('location:login.php');
+    die();
+}
+
 $res = mysqli_query($con, "SELECT * from student");
 
 ?>
 <a href="add.php">Add Record</a>
+<br/>
+<a href="logout.php">Logout</a>
+<br/>
 <table border="1">
     <tr>
         <td>S.No</td>

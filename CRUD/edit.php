@@ -1,12 +1,16 @@
 <?php
 
-$con = mysqli_connect("localhost:3308", "root", "", "phptut");
+include('db.php');
+if(!isset($_SESSION['IS_LOGIN'])){
+    header('location:login.php');
+    die();
+}
 
-$id = $_GET['id'];
+$id = mysqli_real_escape_string($con,$_GET['id']);
 
 if(isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $city = $_POST['city'];
+    $name = mysqli_real_escape_string($con,$_POST['name']);
+    $city = mysqli_real_escape_string($con,$_POST['city']);
     mysqli_query($con, "UPDATE student set name='$name', city='$city' where id='$id'");
     header('location:index.php');
     die();
@@ -14,12 +18,19 @@ if(isset($_POST['submit'])) {
 
 
 $res = mysqli_query($con, "SELECT * from student where id='$id'");
+if(mysqli_num_rows($res) == 0){
+    header('location:index.php');
+    die();
+}
 $row = mysqli_fetch_assoc($res);
 $name = $row['name'];
 $city = $row['city'];
 
 ?>
 
+<br/>
+<a href="logout.php">Logout</a>
+<br/>
 <form method="post">
     <table>
         <tr>

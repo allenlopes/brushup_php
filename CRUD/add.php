@@ -1,17 +1,23 @@
 <?php
 
-$con = mysqli_connect("localhost:3308", "root", "", "phptut");
-
+include('db.php');
+if(!isset($_SESSION['IS_LOGIN'])){
+    header('location:login.php');
+    die();
+}
 
 if(isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $city = $_POST['city'];
+    $name = mysqli_real_escape_string($con,$_POST['name']);
+    $city = mysqli_real_escape_string($con,$_POST['city']);
     mysqli_query($con, "INSERT into student(name,city) values('$name', '$city')");
     header('location:index.php');
     die();
 }
 ?>
 
+<br/>
+<a href="logout.php">Logout</a>
+<br/>
 <form method="post">
     <table>
         <tr>
